@@ -1,0 +1,29 @@
+
+// la fonction retourne un bouleen. elle reçoit en paramètre un tableau de caractère et 2 entiers comme compteur
+//n:=mot.lenght-1 donc le compteur part du dernier element vers le centre 
+//i:=0 part du premier element vers le centre 
+
+        FUNCTION IS_PALINDROM( mot[]:CHAR, i:=0:INTEGER, n:INTEGER ) :BOOLEEN
+        
+
+        BEGIN
+
+      // condition d'arret
+
+            IF (n <= 1 or i=n ) THEN 
+                return true;
+
+            ELSE IF (mot[i] != mot[n]) THEN 
+             
+                return false;
+
+            ELSE
+    // on parcour le tableau de chaque extremité vers le centre
+
+                return IS_PALINDROM(mot,i+1, n-1) ; // On retourn vrai car l'egalité est vérifié
+
+            END_IF
+
+
+        END
+        
